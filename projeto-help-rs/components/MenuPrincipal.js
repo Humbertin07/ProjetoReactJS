@@ -8,7 +8,7 @@ import {
   StyleSheet,
   Vibration,
 } from 'react-native';
-import firebase from '../config/config'
+
 
 class PaginaLogado extends React.Component {
   constructor(props) {
@@ -26,7 +26,7 @@ class PaginaLogado extends React.Component {
 
   render() {
     return (
-      <View>
+      <View style={styles.container}>
         <Text style={styles.title}>{'Bem Vindo!'}</Text>
         <Text style={styles.subtitle}>{'Vamos Ajudar?'}</Text>
 
@@ -58,10 +58,17 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: '#3F4775',
     textAlign: 'center',
+    marginLeft: 40,
+    marginRight: 40,
+    borderRadius: 10,
   },
   subtitle: {
     fontSize: 18,
     textAlign: 'center',
+    marginLeft: 40,
+    marginRight: 40,
+    borderRadius: 10,
+    marginTop: 5,
   },
   button: {
     backgroundColor: '#3F4775',
@@ -80,6 +87,11 @@ const styles = StyleSheet.create({
   backButtonText: {
     color: 'white',
     fontSize: 18,
+  },
+  container: {
+    marginTop: 40,
+    marginLeft: 20,
+    marginRight: 20,
   },
 });
 
