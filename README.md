@@ -319,8 +319,7 @@ Bem, seguindo essa lógica simples, temos todo o funcionamento do app e assim ch
 Humberto Pellegrini
 24.123.065-5
 
-Com auxílio e ajuda do Professor:
-Isaac Jesus Silva
+Com auxílio e incentivo do Professor Isaac Jesus Silva!
 
 
 
