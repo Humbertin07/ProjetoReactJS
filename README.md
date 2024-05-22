@@ -316,8 +316,7 @@ Doando um valor de x reais, isso será salvo no database e ficará pronto para v
 Bem, seguindo essa lógica simples, temos todo o funcionamento do app e assim chegamos ao fim do projeto!
 
 <h1>🖖 Dev Por Trás do Projeto! 🖖</h1>
-Humberto Pellegrini
-24.123.065-5
+Humberto Pellegrini, 24.123.065-5
 
 Com auxílio e incentivo do Professor Isaac Jesus Silva!
 
