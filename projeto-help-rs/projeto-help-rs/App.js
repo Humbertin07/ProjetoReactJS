@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, View, Button, TextInput, Alert, StyleSheet } from 'react-native';
+import { Text, View, Button, TextInput, Alert, StyleSheet, Vibration } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
@@ -136,6 +136,7 @@ class Cadastro extends React.Component {
       .createUserWithEmailAndPassword(email, password)
       .then(() => {
         alert('Usuário cadastrado com sucesso!');
+        Vibration.vibrate(100);
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -209,6 +210,7 @@ class Principal extends React.Component {
       .auth()
       .signInWithEmailAndPassword(email, password)
       .then(() => {
+        Vibration.vibrate(100);
         Alert.alert('Logado!!!', 'Login realizado com sucesso!');
         this.props.navigation.navigate('MenuPrincipal', {
           email: this.state.usuario,
