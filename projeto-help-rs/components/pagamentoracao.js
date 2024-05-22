@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import firebase from '../config/config'
 
-class pagamentopix extends React.Component {
+class pagamentoracao extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -25,10 +25,10 @@ class pagamentopix extends React.Component {
 
   render() {
     return (
-      <View>
+      <View style={styles.container}>
         <Text style={styles.titulo}>{'Pix para a Ração dos Animais em Geral'}</Text>
         <div style={styles.div}>
-          <Image source={require('../assets/ajuda.jpg')} style={styles.image} />
+          <Image source={require('../assets/qrcode.jpg')} style={styles.image} />
         </div>
 
         <Text style={styles.text}>
@@ -51,7 +51,7 @@ class pagamentopix extends React.Component {
         />
 
         <TouchableOpacity
-          style={[styles.button, styles.backButton]}
+          style={[styles.button, styles.backButtonFinalizar]}
           onPress={() => this.salvar()}>
           <Text style={[styles.buttonText, styles.backButtonText]}>
             Finalizar Compra
@@ -75,7 +75,13 @@ const styles = StyleSheet.create({
     fontSize: 22,
     borderWidth: 2,
     borderColor: '#3F4775',
+    backgroundColor: 'lightblue',
     textAlign: 'center',
+    marginLeft: 40,
+    marginRight: 40,
+    borderRadius: 10,
+    fontWeight: 'Bold',
+    color: 'darkred',
   },
   button: {
     backgroundColor: '#3F4775',
@@ -96,21 +102,31 @@ const styles = StyleSheet.create({
     fontSize: 18,
   },
   text: {
-    color: 'purple',
     fontSize: 18,
     textAlign: 'center',
-    alignItems: 'center',
+    marginLeft: 40,
+    marginRight: 40,
+    borderRadius: 10,
+    fontWeight: 'Bold',
+    color: 'darkred',
   },
   image: {
-    width: 350,
-    height: 100,
+    marginBottom: 10,
+    marginTop: 20,
+    width: 450,
+    height: 325,
   },
   div: {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
   },
-  input: {
+  container: {
+    marginTop: 40,
+    marginLeft: 20,
+    marginRight: 20,
+  },
+    input: {
     height: 50,
     padding: 5,
     fontSize: 25,
@@ -118,7 +134,11 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     margin: 10,
     borderRadius: 8,
+    marginTop: 10,
+  },
+  backButtonFinalizar: {
+    backgroundColor: '#3F4775',
   },
 });
 
-export default pagamentopix;
+export default pagamentoracao;

@@ -19,10 +19,10 @@ class OpcoesAjuda extends React.Component {
 
   render() {
     return (
-      <View>
-        <Text style={styles.text}>{'1. Pix para o RS'}</Text>
+      <View style={styles.container}>
+        <Text style={styles.title}>{'1. Pix para o RS'}</Text>
         <div style={styles.div}>
-        <Image source={require('../assets/ajuda.jpg')} style={styles.image} />
+        <Image source={require('../assets/rs.png')} style={styles.image} />
         </div>
         <TouchableOpacity
           style={[styles.button, styles.backButton]}
@@ -30,9 +30,9 @@ class OpcoesAjuda extends React.Component {
           <Text style={[styles.buttonText, styles.backButtonText]}>Conheça!</Text>
         </TouchableOpacity>
 
-        <Text style={styles.text}>{'2. Gasolina para os Jet Skis!'}</Text>
+        <Text style={styles.title}>{'2. Gasolina para os Jet Skis!'}</Text>
         <div style={styles.div}>
-        <Image source={require('../assets/ajuda.jpg')} style={styles.image} />
+        <Image source={require('../assets/rsJS.png')} style={styles.image} />
         </div>
         <TouchableOpacity
           style={[styles.button, styles.backButton]}
@@ -40,9 +40,9 @@ class OpcoesAjuda extends React.Component {
           <Text style={[styles.buttonText, styles.backButtonText]}>Conheça!</Text>
         </TouchableOpacity>
   
-        <Text style={styles.text}>{'3. Mande Ração para os Animais!'}</Text>
+        <Text style={styles.title}>{'3. Mande Ração para os Animais!'}</Text>
         <div style={styles.div}>
-        <Image source={require('../assets/ajuda.jpg')} style={styles.image} />
+        <Image source={require('../assets/rsAnimais.png')} style={styles.image} />
         </div><TouchableOpacity
           style={[styles.button, styles.backButton]}
           onPress={() => this.props.navigation.navigate('Racao')}>
@@ -50,7 +50,7 @@ class OpcoesAjuda extends React.Component {
         </TouchableOpacity>
 
         <TouchableOpacity
-          style={[styles.button, styles.backButton]}
+          style={[styles.button, styles.backButtonVoltar]}
           onPress={() => this.props.navigation.navigate('MenuPrincipal')}>
           <Text style={[styles.buttonText, styles.backButtonText]}>Voltar</Text>
         </TouchableOpacity>
@@ -61,6 +61,18 @@ class OpcoesAjuda extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  title: {
+    fontSize: 22,
+    borderWidth: 2,
+    borderColor: '#3F4775',
+    backgroundColor: 'lightblue',
+    textAlign: 'center',
+    marginLeft: 40,
+    marginRight: 40,
+    borderRadius: 10,
+    fontWeight: 'Bold',
+    color: 'darkred',
+  },
   button: {
     backgroundColor: '#3F4775',
     padding: 10,
@@ -73,36 +85,30 @@ const styles = StyleSheet.create({
     fontSize: 18,
   },
   backButton: {
+    backgroundColor: '#3F4775',
+  },
+  backButtonVoltar: {
     backgroundColor: '#801524',
   },
   backButtonText: {
     color: 'white',
     fontSize: 18,
   },
-  text: {
-    color: 'purple',
-    fontSize: 18,
-    textAlign: 'center',
-    alignItems: 'center',
+  container: {
+    marginTop: 40,
+    marginLeft: 20,
+    marginRight: 20,
   },
   image: {
+    marginTop: 10,
     width: 350,
-    height: 100,
+    height: 200,
   },
   div: {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
   },
-  input: {
-    height: 50,
-    padding: 5,
-    fontSize: 25,
-    borderColor: 'gray',
-    borderWidth: 1,
-    margin: 10,
-    borderRadius: 8
-  }
 });
 
 export default OpcoesAjuda;

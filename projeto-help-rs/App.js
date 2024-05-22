@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, View, Button, TextInput, Alert, StyleSheet } from 'react-native';
+import { Text, View, Button, TextInput, Alert, StyleSheet, Vibration } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
@@ -136,6 +136,7 @@ class Cadastro extends React.Component {
       .createUserWithEmailAndPassword(email, password)
       .then(() => {
         alert('Usuário cadastrado com sucesso!');
+        Vibration.vibrate(100);
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -157,14 +158,14 @@ class Cadastro extends React.Component {
 
   render() {
     return (
-      <View>
+      <View style={estilos.container}>
         <Text style={estilos.texto}>{'Cadastrar Usuário:'}</Text>
         <TextInput
           style={estilos.input}
           onChangeText={(texto) => this.setState({ user: texto })}></TextInput>
         <Text style={estilos.texto}>{'Cadastrar Senha:'}</Text>
         <TextInput
-          style={estilos.input}
+          style={estilos.inputBotoes}
           onChangeText={(texto) =>
             this.setState({ password: texto })
           }></TextInput>
@@ -185,7 +186,7 @@ class Principal extends React.Component {
 
   render() {
     return (
-      <View>
+      <View style={estilos.container}>
         <Text style={estilos.texto}>{'Usuário:'}</Text>
         <TextInput
           style={estilos.input}
@@ -194,7 +195,7 @@ class Principal extends React.Component {
           }></TextInput>
         <Text style={estilos.texto}>{'Senha:'}</Text>
         <TextInput
-          style={estilos.input}
+          style={estilos.inputBotoes}
           onChangeText={(texto) => this.setState({ senha: texto })}></TextInput>
         <Button color= '#801524' title="Logar" onPress={() => this.ler()}></Button>
       </View>
@@ -209,6 +210,7 @@ class Principal extends React.Component {
       .auth()
       .signInWithEmailAndPassword(email, password)
       .then(() => {
+        Vibration.vibrate(100);
         Alert.alert('Logado!!!', 'Login realizado com sucesso!');
         this.props.navigation.navigate('MenuPrincipal', {
           email: this.state.usuario,
@@ -229,10 +231,13 @@ class Principal extends React.Component {
 
 const estilos = StyleSheet.create({
   texto: {
-    color: '#801524',
     fontSize: 30,
-    alignSelf: 'center',
-    
+    textAlign: 'center',
+    marginLeft: 40,
+    marginRight: 40,
+    borderRadius: 10,
+    fontWeight: 'Bold',
+    color: 'darkred',
   },
   input: {
     height: 50,
@@ -242,5 +247,19 @@ const estilos = StyleSheet.create({
     borderWidth: 1,
     margin: 10,
     borderRadius: 10,
+  },
+  inputBotoes: {
+    height: 50,
+    padding: 5,
+    fontSize: 25,
+    borderColor: 'gray',
+    borderWidth: 1,
+    marginBottom: 35,
+    borderRadius: 10,
+  },
+    container: {
+    marginTop: 15,
+    marginLeft: 20,
+    marginRight: 20,
   },
 });

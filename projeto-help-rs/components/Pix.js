@@ -18,16 +18,17 @@ class OpcoesAjuda extends React.Component {
 
   render() {
     return (
-      <View>
+      <View style={styles.container}>
         <Text style={styles.titulo}>{'Pix para o RS'}</Text>
         <div style={styles.div}>
-        <Image source={require('../assets/ajuda.jpg')} style={styles.image} />
+        <Image source={require('../assets/rs.png')} style={styles.image} />
         </div>
         
-        <Text style={styles.text}>{'LARARARARARARARARARA'}</Text>
+        <Text style={styles.text}>{'O valor doado aqui, será direcionado ao que for necessário para o RS e sua comunidade.\n'}</Text>
+        <Text style={styles.text}>{'\nSe seu objetivo é doar para outra causa, volte a página!'}</Text>
 
         <TouchableOpacity
-          style={[styles.button, styles.backButton]}
+          style={[styles.button, styles.backButtonDoar]}
           onPress={() => this.props.navigation.navigate('pagamentopix')}>
           <Text style={[styles.buttonText, styles.backButtonText]}>Doar</Text>
         </TouchableOpacity>
@@ -48,7 +49,13 @@ const styles = StyleSheet.create({
     fontSize: 22,
     borderWidth: 2,
     borderColor: '#3F4775',
+    backgroundColor: 'lightblue',
     textAlign: 'center',
+    marginLeft: 40,
+    marginRight: 40,
+    borderRadius: 10,
+    fontWeight: 'Bold',
+    color: 'darkred',
   },
   button: {
     backgroundColor: '#3F4775',
@@ -64,34 +71,38 @@ const styles = StyleSheet.create({
   backButton: {
     backgroundColor: '#801524',
   },
+  backButtonDoar: {
+    backgroundColor: '#3F4775',
+  },
   backButtonText: {
     color: 'white',
     fontSize: 18,
   },
   text: {
-    color: 'purple',
     fontSize: 18,
     textAlign: 'center',
-    alignItems: 'center',
+    marginLeft: 40,
+    marginRight: 40,
+    borderRadius: 10,
+    fontWeight: 'Bold',
+    color: 'darkred',
   },
   image: {
+    marginTop: 10,
+    marginBottom: 10,
     width: 350,
-    height: 100,
+    height: 200,
   },
   div: {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
   },
-  input: {
-    height: 50,
-    padding: 5,
-    fontSize: 25,
-    borderColor: 'gray',
-    borderWidth: 1,
-    margin: 10,
-    borderRadius: 8
-  }
+    container: {
+    marginTop: 40,
+    marginLeft: 20,
+    marginRight: 20,
+  },
 });
 
 export default OpcoesAjuda;

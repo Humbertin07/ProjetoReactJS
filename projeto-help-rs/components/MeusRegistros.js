@@ -39,7 +39,7 @@ class MeusRegistros extends React.Component {
         let dados = Object.values(data);
         this.setState({ valordopix: dados });
       });
-  
+
     firebase
       .database()
       .ref('valordagasosa')
@@ -48,7 +48,7 @@ class MeusRegistros extends React.Component {
         let dados = Object.values(data);
         this.setState({ valordagasosa: dados });
       });
-  
+
     firebase
       .database()
       .ref('valordaracao')
@@ -65,19 +65,30 @@ class MeusRegistros extends React.Component {
         <View style={styles.container}>
           <Text
             style={{
-              fontSize: 22,
-              borderColor: 'gray',
-              borderWidth: 1,
-              textAlign: 'center',
+              fontSize: 18,
+              borderWidth: 2,
+              borderColor: '#3F4775',
+              backgroundColor: 'lightblue',
+              textAlign: 'left',
+              marginBottom: 10,
+              borderRadius: 10,
+              fontWeight: 'Bold',
+              color: 'darkred',
             }}>
             {' '}
-            {'Você doou os valores abaixo para o Pix Geral do RS\n'}{' '}
+            {'Você doou os valores abaixo para o Pix Geral do RS:\n'}{' '}
             {this.state.valordopix.length > 0 ? (
               <FlatList
+                style={{
+                  color: 'black',
+                }}
                 data={this.state.valordopix}
                 renderItem={({ item }) => (
                   <View>
-                    <Text>{item.opcao}</Text>
+                    <Text>
+                      {'R$ '}
+                      {item.opcao}
+                    </Text>
                   </View>
                 )}
               />
@@ -86,19 +97,30 @@ class MeusRegistros extends React.Component {
 
           <Text
             style={{
-              fontSize: 22,
-              borderColor: 'gray',
-              borderWidth: 1,
-              textAlign: 'center',
+              fontSize: 18,
+              borderWidth: 2,
+              borderColor: '#3F4775',
+              backgroundColor: 'lightblue',
+              textAlign: 'left',
+              marginBottom: 10,
+              borderRadius: 10,
+              fontWeight: 'Bold',
+              color: 'darkred',
             }}>
             {' '}
-            {'Você doou os valores abaixo para a gasolina dos Jet Skis\n'}{' '}
+            {'Você doou os valores abaixo para a gasolina dos Jet Skis:\n'}{' '}
             {this.state.valordagasosa.length > 0 ? (
               <FlatList
+                style={{
+                  color: 'black',
+                }}
                 data={this.state.valordagasosa}
                 renderItem={({ item }) => (
                   <View>
-                    <Text>{item.opcao}</Text>
+                    <Text>
+                      {'R$ '}
+                      {item.opcao}
+                    </Text>
                   </View>
                 )}
               />
@@ -107,19 +129,29 @@ class MeusRegistros extends React.Component {
 
           <Text
             style={{
-              fontSize: 22,
-              borderColor: 'gray',
-              borderWidth: 1,
-              textAlign: 'center',
+              fontSize: 18,
+              borderWidth: 2,
+              borderColor: '#3F4775',
+              backgroundColor: 'lightblue',
+              textAlign: 'left',
+              borderRadius: 10,
+              fontWeight: 'Bold',
+              color: 'darkred',
             }}>
             {' '}
-            {'Você doou os valores abaixo para a ração dos animais\n'}{' '}
+            {'Você doou os valores abaixo para a ração dos animais:\n'}{' '}
             {this.state.valordaracao.length > 0 ? (
               <FlatList
+                style={{
+                  color: 'black',
+                }}
                 data={this.state.valordaracao}
                 renderItem={({ item }) => (
                   <View>
-                    <Text>{item.opcao}</Text>
+                    <Text>
+                      {'R$ '}
+                      {item.opcao}
+                    </Text>
                   </View>
                 )}
               />
@@ -155,6 +187,11 @@ const styles = StyleSheet.create({
   backButtonText: {
     color: 'white',
     fontSize: 18,
+  },
+  container: {
+    marginTop: 20,
+    marginLeft: 15,
+    marginRight: 15,
   },
 });
 

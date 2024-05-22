@@ -57,10 +57,13 @@ const styles = StyleSheet.create({
     fontSize: 22,
     borderWidth: 2,
     borderColor: '#3F4775',
+    backgroundColor: 'lightblue',
     textAlign: 'center',
     marginLeft: 40,
     marginRight: 40,
     borderRadius: 10,
+    fontWeight: 'Bold',
+    color: 'darkred',
   },
   subtitle: {
     fontSize: 18,
@@ -69,6 +72,8 @@ const styles = StyleSheet.create({
     marginRight: 40,
     borderRadius: 10,
     marginTop: 5,
+    fontWeight: 'Bold',
+    color: 'darkred',
   },
   button: {
     backgroundColor: '#3F4775',
