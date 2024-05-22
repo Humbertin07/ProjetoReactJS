@@ -20,9 +20,9 @@ class OpcoesAjuda extends React.Component {
     return (
       <View style={styles.container}>
         <Text style={styles.titulo}>{'Pix para o RS'}</Text>
-        <div style={styles.div}>
+        <View style={styles.centralizado}>
         <Image source={require('../assets/rs.png')} style={styles.image} />
-        </div>
+        </View>
         
         <Text style={styles.text}>{'O valor doado aqui, será direcionado ao que for necessário para o RS e sua comunidade.\n'}</Text>
         <Text style={styles.text}>{'\nSe seu objetivo é doar para outra causa, volte a página!'}</Text>
@@ -93,10 +93,8 @@ const styles = StyleSheet.create({
     width: 350,
     height: 200,
   },
-  div: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
+  centralizado: {
+    alignSelf: 'center',
   },
     container: {
     marginTop: 40,

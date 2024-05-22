@@ -8,14 +8,12 @@ import {
   TouchableOpacity,
   Vibration,
   FlatList,
+  ScrollView,
 } from 'react-native';
 import firebase from '../config/config';
 
 handlePress = (screen) => {
   Vibration.vibrate(100); // Vibra por 100ms
-  if (this.state.sound) {
-    this.state.sound.replayAsync();
-  }
   this.props.navigation.navigate(screen);
 };
 
@@ -36,7 +34,12 @@ class MeusRegistros extends React.Component {
       .ref('valordopix')
       .on('value', (snapshot) => {
         let data = snapshot.val();
-        let dados = Object.values(data);
+        let dados = { };
+        if (data !== null){
+        dados = Object.values(data);
+        } else {
+          console.log('Null');
+        }
         this.setState({ valordopix: dados });
       });
 
@@ -45,7 +48,12 @@ class MeusRegistros extends React.Component {
       .ref('valordagasosa')
       .on('value', (snapshot) => {
         let data = snapshot.val();
-        let dados = Object.values(data);
+        let dados = { };
+        if (data !== null){
+        dados = Object.values(data);
+        } else {
+          console.log('Null');
+        }
         this.setState({ valordagasosa: dados });
       });
 
@@ -54,13 +62,19 @@ class MeusRegistros extends React.Component {
       .ref('valordaracao')
       .on('value', (snapshot) => {
         let data = snapshot.val();
-        let dados = Object.values(data);
+        let dados = { };
+        if (data !== null){
+        dados = Object.values(data);
+        } else {
+          console.log('Null');
+        }
         this.setState({ valordaracao: dados });
       });
   }
 
   render() {
     return (
+      <ScrollView style={styles.scroll}>
       <View style={styles.container}>
         <View style={styles.container}>
           <Text
@@ -165,6 +179,7 @@ class MeusRegistros extends React.Component {
           <Text style={[styles.buttonText, styles.backButtonText]}>Voltar</Text>
         </TouchableOpacity>
       </View>
+      </ScrollView>
     );
   }
 }
@@ -192,6 +207,9 @@ const styles = StyleSheet.create({
     marginTop: 20,
     marginLeft: 15,
     marginRight: 15,
+  },
+  scroll: {
+    Flex: 1,
   },
 });
 

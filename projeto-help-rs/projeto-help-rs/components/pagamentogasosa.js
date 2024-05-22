@@ -27,9 +27,9 @@ class pagamentogasosa extends React.Component {
     return (
       <View style={styles.container}>
         <Text style={styles.titulo}>{'Pix para a Gasolina dos Jets'}</Text>
-        <div style={styles.div}>
+        <View style={styles.centralizado}>
           <Image source={require('../assets/qrcode.jpg')} style={styles.image} />
-        </div>
+        </View>
 
         <Text style={styles.text}>
           {
@@ -116,10 +116,8 @@ const styles = StyleSheet.create({
     width: 450,
     height: 325,
   },
-  div: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
+  centralizado: {
+    alignSelf: 'Center',
   },
   container: {
     marginTop: 40,

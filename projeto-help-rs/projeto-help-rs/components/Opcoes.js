@@ -8,45 +8,54 @@ import {
   StyleSheet,
   Vibration,
   Image,
+  ScrollView,
 } from 'react-native';
-import firebase from '../config/config'
+import firebase from '../config/config';
 
 class OpcoesAjuda extends React.Component {
   constructor(props) {
     super(props);
-    this.opcao = ""
+    this.opcao = '';
   }
 
   render() {
     return (
+      <ScrollView>
       <View style={styles.container}>
         <Text style={styles.title}>{'1. Pix para o RS'}</Text>
-        <div style={styles.div}>
-        <Image source={require('../assets/rs.png')} style={styles.image} />
-        </div>
+        <View style={styles.centralizado}>
+          <Image source={require('../assets/rs.png')} style={styles.image} />
+        </View>
         <TouchableOpacity
           style={[styles.button, styles.backButton]}
           onPress={() => this.props.navigation.navigate('Pix')}>
-          <Text style={[styles.buttonText, styles.backButtonText]}>Conheça!</Text>
+          <Text style={[styles.buttonText, styles.backButtonText]}>
+            Conheça!
+          </Text>
         </TouchableOpacity>
 
         <Text style={styles.title}>{'2. Gasolina para os Jet Skis!'}</Text>
-        <div style={styles.div}>
-        <Image source={require('../assets/rsJS.png')} style={styles.image} />
-        </div>
+        <View style={styles.centralizado}>
+          <Image source={require('../assets/rsJS.png')} style={styles.image} />
+        </View>
         <TouchableOpacity
           style={[styles.button, styles.backButton]}
           onPress={() => this.props.navigation.navigate('Gasolina')}>
-          <Text style={[styles.buttonText, styles.backButtonText]}>Conheça!</Text>
+          <Text style={[styles.buttonText, styles.backButtonText]}>
+            Conheça!
+          </Text>
         </TouchableOpacity>
-  
+
         <Text style={styles.title}>{'3. Mande Ração para os Animais!'}</Text>
-        <div style={styles.div}>
-        <Image source={require('../assets/rsAnimais.png')} style={styles.image} />
-        </div><TouchableOpacity
+        <View style={styles.centralizado}>
+          <Image source={require('../assets/rsAnimais.png')} style={styles.image} />
+        </View>
+        <TouchableOpacity
           style={[styles.button, styles.backButton]}
           onPress={() => this.props.navigation.navigate('Racao')}>
-          <Text style={[styles.buttonText, styles.backButtonText]}>Conheça!</Text>
+          <Text style={[styles.buttonText, styles.backButtonText]}>
+            Conheça!
+          </Text>
         </TouchableOpacity>
 
         <TouchableOpacity
@@ -54,8 +63,8 @@ class OpcoesAjuda extends React.Component {
           onPress={() => this.props.navigation.navigate('MenuPrincipal')}>
           <Text style={[styles.buttonText, styles.backButtonText]}>Voltar</Text>
         </TouchableOpacity>
-
       </View>
+      </ScrollView>
     );
   }
 }
@@ -108,6 +117,9 @@ const styles = StyleSheet.create({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  centralizado: {
+    alignSelf: 'Center',
   },
 });
 

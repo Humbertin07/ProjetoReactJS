@@ -158,14 +158,14 @@ class Cadastro extends React.Component {
 
   render() {
     return (
-      <View>
+      <View style={estilos.container}>
         <Text style={estilos.texto}>{'Cadastrar Usuário:'}</Text>
         <TextInput
           style={estilos.input}
           onChangeText={(texto) => this.setState({ user: texto })}></TextInput>
         <Text style={estilos.texto}>{'Cadastrar Senha:'}</Text>
         <TextInput
-          style={estilos.input}
+          style={estilos.inputBotoes}
           onChangeText={(texto) =>
             this.setState({ password: texto })
           }></TextInput>
